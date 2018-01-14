@@ -1,0 +1,9 @@
+<div class="col-md-12">
+  <h3>First attempt</h3>
+  <ul>
+    <li ng-repeat="item in nid.found track by $index">
+      {{item}}
+      <button ng-click="nid.removeItem($index);">Remove Item</button>
+    </li>
+  </ul>
+</div>

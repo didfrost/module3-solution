@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app='NarrowItDownApp' lang="en">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body>
+   <div ng-controller='NarrowItDownController as nid' class="container">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div>
+      <div class="form-group">
+        <input ng-model="nid.name" type="text" placeholder="search term" class="form-control">
+      </div>
+      <div class="form-group narrow-button">
+        <button ng-click="nid.getMatchedMenuItems(nid.name)" class="btn btn-primary">Narrow It Down For Me!</button>
+      </div>
+  </div>
+  <found-items found="nid.found" onRemove='nid.removeItem(index)'></found-items>
+
+</body>
+</html>
